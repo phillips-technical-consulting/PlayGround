@@ -1,0 +1,82 @@
+﻿@model PlayGround.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MiddleInitialTxt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MiddleInitialTxt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoginIdTxt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoginIdTxt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PasswordTxt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PasswordTxt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailTxt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailTxt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnabledInd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnabledInd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumberTxt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumberTxt)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
