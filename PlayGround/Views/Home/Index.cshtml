@@ -1,27 +1,52 @@
-﻿@{
+﻿@*@model PlayGround.Models.User*@
+@model PlayGround.Models.Login
+@{
     ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
-    <h1>PlayGround</h1>
+    <h3>@ViewBag.Message</h3>
 </div>
 <div class="row">
-    <div class="col-md-4">
-        <h2>Welcome to PlayGround</h2>
-        <p>
-            PlayGround is a sample application that
-            demonstrates how to use Entity Framework 6 in an
-            ASP.NET MVC 5 web application.
-        </p>
-    </div>
-    <div class="col-md-4">
-        <h2>Build it from scratch</h2>
-        <p>You can build the application by following the steps in the tutorial series on the ASP.NET site.</p>
-        <p><a class="btn btn-default" href="http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/">See the tutorial &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Download it</h2>
-        <p>You can download the completed project.</p>
-        <p><a class="btn btn-default" href="https://webpifeed.blob.core.windows.net/webpifeed/Partners/ASP.NET%20MVC%20Application%20Using%20Entity%20Framework%20Code%20First.zip">Download &raquo;</a></p>
-    </div>
+
+
+
+    @using (Html.BeginForm())
+    {
+
+
+        <h4>Login</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LoginIdTxt, htmlAttributes: new { @name = "loginName", @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LoginIdTxt, new { htmlAttributes = new { @name = "loginName", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LoginIdTxt, "", new { @name = "loginName", @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PasswordTxt, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PasswordTxt, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PasswordTxt, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Index" class="btn btn-default" />
+            </div>
+        </div>
+
+       
+
+    }
+
+
+
 </div>
